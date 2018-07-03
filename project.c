@@ -79,7 +79,7 @@ int main(){
 
 //adding data(word) to a linked list
 	createNewNode(puzzle,puzzle_array);
-		
+	printlist(&puzzle);	
 	}
 		
 
@@ -92,11 +92,12 @@ int main(){
 		if(strlen(inputs) == 0){
 			printf("Null test 2");
 		break;
+		printlist(&words);	
 		}
 
 //again add data to another linked list
 	createNewNode(words,inputs);
-
+	
 
 		//printf("Got data : %s & length : %d\n" ,inputs,strlen(inputs));
 		k++;
