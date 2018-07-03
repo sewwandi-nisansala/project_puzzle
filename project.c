@@ -2,49 +2,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct node1
+typedef struct node
 {
     char list1[100];
-    struct node1* next;
-} node1;
- 
-
-typedef struct node2
-{
     char list2[100];
-    struct node2* next;
-} node2;
-
-typedef void (*callback)(node1* node1);
-typedef void (*callback)(node1* node2);
+    struct node* next;
+} node;
  
-//this function is to print the matrix
-//void print_matrix(char matrix,int n){
+
+typedef void (*callback)(node* node);
+
+ 
 
 
-int main(){
 
-	char words[100];
-	char inputs[100];
-	int k = 1;
-	//char matrix[i][j];
-	
-	while(1){
-		gets(words);
-		//words = getchar();
- 		printf("\nLength of input : %d\n", strlen(words));
- 		
-		if(strlen(words) == 0){
-			printf("Null test 2");
-		break;
-		}
-
-		printf("Got data : %s & length : %d\n" ,words,strlen(words));
-		k++;
-		
-
-//adding data(word) to a linked list
-		/*
+//createNewNode(node* newNode)
+/*
     		create a new node
    		 initialize the data and next field
  
@@ -71,6 +44,32 @@ int main(){
 
     		return new_node1;
 		}
+
+int main(){
+
+	char words[100];
+	char inputs[100];
+	int k = 1;
+	//char matrix[i][j];
+	node* puzzle;	
+	node* words;
+	
+	while(1){
+		gets(words);
+		//words = getchar();
+ 		printf("\nLength of input : %d\n", strlen(words));
+ 		
+		if(strlen(words) == 0){
+			printf("Null test 2");
+		break;
+		}
+
+		printf("Got data : %s & length : %d\n" ,words,strlen(words));
+		k++;
+		
+
+//adding data(word) to a linked list
+		
 		
 	}
 		
