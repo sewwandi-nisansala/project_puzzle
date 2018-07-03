@@ -56,13 +56,24 @@ int main(){
    			printf("Error creating a new node1.\n");
       			exit(0);
    		 }
+		
     		//new_node1->list1 = words;
 		strcpy(new_node1->list1,words);
     		new_node1->next = next;
- 
+		printf("hello");
+ 		while( new_node1 != NULL){
+			printf("hello");
+			printf("%s\n",new_node1->list1);	
+			
+			new_node1->next = next;
+		}
+		//printf("%s\n",new_node1->list1);
+
     		return new_node1;
 		}
+		
 	}
+		
 
 		while(1){
 		
