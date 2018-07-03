@@ -5,7 +5,6 @@
 typedef struct node
 {
     char array[100];
-    char list[100];
     struct node* next;
 } node;
  
