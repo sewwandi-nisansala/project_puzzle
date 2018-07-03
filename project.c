@@ -4,50 +4,60 @@
 
 typedef struct node
 {
-    char list1[100];
-    char list2[100];
+    char array[100];
+    char list[100];
     struct node* next;
 } node;
  
 
 typedef void (*callback)(node* node);
 
- 
-
-
-
-//createNewNode(node* newNode)
+ //function to add new nodes
+node* createNewNode(char array,node* ptr){
 /*
-    		create a new node
-   		 initialize the data and next field
- 
-   		 return the newly created node
+    	create a new node -initialize the data and next field
+	return the newly created node
 		*/
-		node1* create(char list1,node1* next){
-   		node1* new_node1 = (node1*)malloc(sizeof(node1));
-    		if(new_node1 == NULL){
-   			printf("Error creating a new node1.\n");
-      			exit(0);
-   		 }
+		//node* create(char list1,node1* next)
+	node* next;
+	node* new_node = (node*)malloc(sizeof(node));
+        if(new_node == NULL){
+   		printf("Error creating a new node.\n");
+      		exit(0);
+        }
 		
-    		//new_node1->list1 = words;
-		strcpy(new_node1->list1,words);
-    		new_node1->next = next;
-		printf("hello");
- 		while( new_node1 != NULL){
-			printf("hello");
-			printf("%s\n",new_node1->list1);	
-			
-			new_node1->next = next;
-		}
-		//printf("%s\n",new_node1->list1);
+        //new_node1->list1 = words;
+	strcpy(new_node->array,ptr);
+        new_node->next = next;
+        return new_node;
+}
+ 		
 
-    		return new_node1;
-		}
+//function to count the elements of the linked list
+int count(node* head){
+	node *cursor = head;
+	int c = 0;
+	while(cursor != NULL)
+	{
+		c++;
+		cursor = cursor->next;
+	}
+	return c;
+}
 
+//function to print the eleents in the linked list
+void printlist(node * head){
+	node * current = head;
+	while( current != NULL)
+	{
+		printf("%s\n",current->array);
+	}
+	current = current->next;
+}
+		
 int main(){
 
-	char words[100];
+	char puzzle_array[100];
 	char inputs[100];
 	int k = 1;
 	//char matrix[i][j];
@@ -55,21 +65,21 @@ int main(){
 	node* words;
 	
 	while(1){
-		gets(words);
+		gets(puzzle_array);
 		//words = getchar();
- 		printf("\nLength of input : %d\n", strlen(words));
+ 		//printf("\nLength of input : %d\n", strlen(puzzle_array));
  		
-		if(strlen(words) == 0){
+		if(strlen(puzzle_array) == 0){
 			printf("Null test 2");
 		break;
 		}
 
-		printf("Got data : %s & length : %d\n" ,words,strlen(words));
+		//printf("Got data : %s & length : %d\n" ,puzzle_array,strlen(puzzle_array));
 		k++;
 		
 
 //adding data(word) to a linked list
-		
+	createNewNode(puzzle,puzzle_array);
 		
 	}
 		
@@ -78,7 +88,7 @@ int main(){
 		
 		gets(inputs);
 		//inputs = getchar(); 		
-		printf("\nLength of input : %d\n", strlen(inputs));
+		//printf("\nLength of input : %d\n", strlen(inputs));
  		
 		if(strlen(inputs) == 0){
 			printf("Null test 2");
@@ -86,27 +96,10 @@ int main(){
 		}
 
 //again add data to another linked list
-/*
-    		create a new node
-   		 initialize the data and next field
- 
-   		 return the newly created node
-		*/
-		node2* create(char list2,node2* next){
-   		node2* new_node2 = (node2*)malloc(sizeof(node2));
-    		if(new_node2 == NULL){
-   			printf("Error creating a new node2.\n");
-      			exit(0);
-   		 }
-    		//new_node2->list2 = inputs;
-		strcpy(new_node2->list2,inputs);
-    		new_node2->next = next;
- 
-    		return new_node2;
-		}
+	createNewNode(words,inputs);
 
 
-		printf("Got data : %s & length : %d\n" ,inputs,strlen(inputs));
+		//printf("Got data : %s & length : %d\n" ,inputs,strlen(inputs));
 		k++;
 	}
 
