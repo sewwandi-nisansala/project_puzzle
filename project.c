@@ -9,10 +9,10 @@ typedef struct node
 } node;
  
 
-typedef void (*callback)(node* node);
+//typedef void (*callback)(node* node);
 
  //function to add new nodes
-node* createNewNode(char array,node* ptr){
+/*node* createNewNode(char array,node* ptr){
 /*
     	create a new node -initialize the data and next field
 	return the newly created node
@@ -30,7 +30,7 @@ node* createNewNode(char array,node* ptr){
         new_node->next = next;
         return new_node;
 }
- 		
+*/ 		
 
 //function to count the elements of the linked list
 int count(node* head){
@@ -46,12 +46,14 @@ int count(node* head){
 
 //function to print the eleents in the linked list
 void printlist(node * head){
-	node * current = head;
-	while( current != NULL)
+	node *current_node = head;
+	while( current_node != NULL)
+	//while( head != NULL)
 	{
-		printf("%s\n",current->array);
+		printf("%s\n",current_node->array);
+	current_node = current_node->next;
 	}
-	current = current->next;
+	//head = head->next;
 }
 		
 int main(){
@@ -66,19 +68,30 @@ int main(){
 	while(1){
 		gets(puzzle_array);
 		//words = getchar();
- 		//printf("\nLength of input : %d\n", strlen(puzzle_array));
+ 		printf("\nLength of input : %d\n", strlen(puzzle_array));
  		
 		if(strlen(puzzle_array) == 0){
 			printf("Null test 2");
 		break;
+		
+		node* next;
+	node* new_node = (node*)malloc(sizeof(node));
+        if(new_node == NULL){
+   		printf("Error creating a new node.\n");
+      		exit(0);
+        }
+		
+        //new_node1->list1 = words;
+	strcpy(new_node->puzzlearray,puzzle);
+        new_node->next = next;
 		}
 
-		//printf("Got data : %s & length : %d\n" ,puzzle_array,strlen(puzzle_array));
+		printf("Got data : %s & length : %d\n" ,puzzle_array,strlen(puzzle_array));
 		k++;
 		
 
 //adding data(word) to a linked list
-	createNewNode(puzzle,puzzle_array);
+	createNewNode(puzzle_array,&puzzle);
 	printlist(&puzzle);	
 	}
 		
@@ -87,19 +100,19 @@ int main(){
 		
 		gets(inputs);
 		//inputs = getchar(); 		
-		//printf("\nLength of input : %d\n", strlen(inputs));
+		printf("\nLength of input : %d\n", strlen(inputs));
  		
 		if(strlen(inputs) == 0){
 			printf("Null test 2");
 		break;
-		printlist(&words);	
+		
 		}
 
 //again add data to another linked list
-	createNewNode(words,inputs);
-	
+	createNewNode(inputs,&words);
+	printlist(&words);	
 
-		//printf("Got data : %s & length : %d\n" ,inputs,strlen(inputs));
+		printf("Got data : %s & length : %d\n" ,inputs,strlen(inputs));
 		k++;
 	}
 
