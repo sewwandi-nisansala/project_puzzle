@@ -12,7 +12,7 @@ typedef struct node
 //typedef void (*callback)(node* node);
 
  //function to add new nodes
-/*node* createNewNode(char array,node* ptr){
+node* createNewNode(char array,node* ptr){
 /*
     	create a new node -initialize the data and next field
 	return the newly created node
@@ -30,7 +30,7 @@ typedef struct node
         new_node->next = next;
         return new_node;
 }
-*/ 		
+ 		
 
 //function to count the elements of the linked list
 int count(node* head){
@@ -74,16 +74,7 @@ int main(){
 			printf("Null test 2");
 		break;
 		
-		node* next;
-	node* new_node = (node*)malloc(sizeof(node));
-        if(new_node == NULL){
-   		printf("Error creating a new node.\n");
-      		exit(0);
-        }
 		
-        //new_node1->list1 = words;
-	strcpy(new_node->puzzlearray,puzzle);
-        new_node->next = next;
 		}
 
 		printf("Got data : %s & length : %d\n" ,puzzle_array,strlen(puzzle_array));
